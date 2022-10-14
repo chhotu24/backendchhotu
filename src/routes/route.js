@@ -13,7 +13,7 @@ router.get('/test-me', function (req, res) {
     let myArray = ['Akash', 'Pritesh', 'Sabiha']
     let result = underscore.first(myArray)
     console.log("The result of underscores examples api is : ", result)
-    
+    console.log(xyz1)
     res.send('My first ever api!')
 
     //To be tried what happens if we send multiple response
@@ -21,4 +21,5 @@ router.get('/test-me', function (req, res) {
 });
 
 module.exports = router;
+
 
