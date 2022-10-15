@@ -1,4 +1,4 @@
-const current_date=function(){
+const chhotu=function(){
 
 const today=new Date();
 const day=today.getDay();
@@ -10,4 +10,4 @@ return 'today is $[today] week number is $[day] month number is $[month] the yea
 }
 
 
-module.exports.update=current_date
+module.exports.update=chhotu
