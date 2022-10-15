@@ -1,11 +1,11 @@
 const current_date=function(){
 
 const today=new date();
-const day=current_date.getUtcDate();
-const month=current_date.getUtcMonth();
-const year=current_date.getUtcFullYear();
+const day=today.getUtcDate();
+const month=today.getUtcMonth();
+const year=today.getUtcFullYear();
 
-return "today"
+return "${day} , ${month} , ${year} , ${today}  "
 
 }
 
