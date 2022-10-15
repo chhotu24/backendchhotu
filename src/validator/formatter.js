@@ -2,7 +2,7 @@ const degin=function(str) {
 
 const up=str.trim().toLowerCase();
 const down=str.trim().toUpperCase();
-return ` ${up} // ${down}     
+return ` ${up} // ${down} `    
 
 }
 
