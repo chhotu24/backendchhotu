@@ -12,7 +12,7 @@ const xyz3=require('../validator/formatter');
 
 router.get('/test-me', function (req, res) {
  console.log(xyz.greetings())
- console.log(xyz2.date())
+ console.log(xyz2.update())
 
 
     res.send('My first ever api!')
