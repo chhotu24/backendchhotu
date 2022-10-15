@@ -1,10 +1,6 @@
-const url = "https://www.google.com"
-
-let printSomething = function() {
-    console.log("Request details are - a, b, c")
-    return "done"
+const welcome=function (name){
+    return 'Welcome to my application. I am ${name} and a part of FunctionUp lithium cohort.'
 }
 
-let abc = 2022
-module.exports.myUrl = url
-module.exports.myFunction = printSomething
+let name='chhotu shaw'
+module.exports.greetings =welcome
