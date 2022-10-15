@@ -1,6 +1,6 @@
 const current_date=function(){
 
-const today=new date();
+const today=new Date();
 const day=today.getDay();
 const month=today.getMonth();
 const year=today.getUtcFullYear();
