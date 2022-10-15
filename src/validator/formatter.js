@@ -2,7 +2,8 @@ const degin=function(str) {
 
 const up=str.trim().toLowerCase();
 const down=str.trim().toUpperCase();
-return ` ${up} // ${down} `    
+const center=str.trim();
+return ` ${center} //  ${up} // ${down} `    
 
 }
 
