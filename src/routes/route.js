@@ -5,10 +5,10 @@ const xyz = require('../logger')
 
 
 router.get('/test-me', function (req, res) {
- console.log(xyz.greetings(name))
+ console.log(xyz.greetings())
 
 
-    res.send('My first ever api!')
+    res.send('My first ever api!', 'this is chhotu shaw')
 
     //To be tried what happens if we send multiple response
     //res.send('My second api!')
