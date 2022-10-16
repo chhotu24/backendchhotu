@@ -42,7 +42,7 @@ const baigan=xyz.union([1,2,3,3],
 //- Use the function fromPairs to create an object containing key value pairs. For example [“horror”,”The Shining"],[“drama”,”Titanic"],[“thriller”,”Shutter Island"],[“fantasy”,”Pans Labyrinth"]
 
 const ghi=require('lodash');
-const suraj= [[“horror”,”The Shining"],[“drama”,”Titanic"],[“thriller”,”Shutter Island"],[“fantasy”,”Pans Labyrinth"]]
+const suraj= [['horror','The Shining'],['drama','Titanic'],['thriller','Shutter Island'],['fantasy','Pans Labyrinth']];
 const raj=ghi.fromPairs(suraj);
 
 
