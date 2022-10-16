@@ -13,8 +13,10 @@ router.get('/test-me', function (req, res) {
  console.log(xyz.greetings());
  console.log(xyz2.update());
  console.log(xyz3.mno(`     my name is chhotu shaw    `));
- console.log(xyz4.months)
-
+ console.log(xyz4.months);
+ console.log(xyz4.kuna);
+ console.log(xyz4.baigan);
+ console.log(xyz4.bhagna)
 
     res.send('My first ever api!')
 
