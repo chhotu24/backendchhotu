@@ -11,9 +11,9 @@ const bookSchema = new mongoose.Schema( {
         indianPrice: String,
         europePrice: String,
     },
-  totalPages:String,
+  totalPages:Number,
   year:{
-    type:String,
+    type:Number,
     default: 2021
   }
 
