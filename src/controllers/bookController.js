@@ -1,4 +1,5 @@
 const { count } = require("console")
+const { resolveSoa } = require("dns")
 const BookModel= require("../models/bookModel")
 
 
@@ -88,20 +89,23 @@ const createBook= async function (req, res) {
 // ASSIGNMENT 2
 
 const priceList = async function (req, res) {
-let list= await BookModel.find({})
+let list= await BookModel.find().select({ bookName:1,
+    authorName:1,
+    _id:0
+})
     res.send({msg: list})
 }
 
 // ASSIGNMENT 3
 const booksInYear=async function(req,res){
-    let year=await BookModel.find({})
+    let year=await BookModel.find({"year": 2021})
     res.send({year})
 }
 
 // ASSIGNMENT 4
 
 const particularBooks=async function(req,res){
-let specific=await BookModel.find({})
+let specific=await BookModel.find({"bookName": "three mistake of my life"})
 res.send({specific})
 
 }
@@ -110,14 +114,14 @@ res.send({specific})
 
 
 const xINRBooks=async function(req,res){
-   let inr=await BookModel.find({})
-    res.send({inr})
+   let inr=await BookModel.find({"prices.indianPrice":{$in:["100 INR", "200 INR", "500 INR"]}
+}) 
+res.send({inr})
 }
-
 // ASSIGNMENT 6
 
 const randomBooks= async function(res,res){
-let random=await BookModel.find({})
+let random=await BookModel.find({$or:[{stockAvailable:true},{totalPages:{$gt:500}}]})
 res.send({random})
 
 }
