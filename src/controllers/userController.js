@@ -4,26 +4,59 @@ const userModel = require("../models/userModel");
 /*
   Read all the comments multiple times to understand why we are doing what we are doing in login api and getUserData api
 */
-const createUser = async function (abcd, xyz) {
-  //You can name the req, res objects anything.
-  //but the first parameter is always the request 
-  //the second parameter is always the response
-  let data = abcd.body;
-  let savedData = await userModel.create(data);
-  console.log(abcd.newAtribute);
-  xyz.send({ msg: savedData });
-};
+// const createUser = async function (abcd, xyz) {
+//   //You can name the req, res objects anything.
+//   //but the first parameter is always the request 
+//   //the second parameter is always the response
+//   let data = abcd.body;
+//   let savedData = await userModel.create(data);
+//   console.log(abcd.newAtribute);
+//   xyz.send({ msg: savedData });
+// };
 
-const loginUser = async function (req, res) {
-  let userName = req.body.emailId;
-  let password = req.body.password;
 
-  let user = await userModel.findOne({ emailId: userName, password: password });
-  if (!user)
-    return res.send({
-      status: false,
-      msg: "username or the password is not corerct",
-    });
+const createUser=async function(req,res){
+let data=req.body
+let saveData=await userModel.create(data);
+console.log(req.body.firstName);
+res.send({msg:saveData})
+}
+
+
+
+const loginUser=async function(req,res){
+const verifyEmail=req.body.emailId
+const verifyPassword=req.body.password
+let bothData=await userModel.findOne({emailId:verifyEmail, password:verifyPassword})
+if(!bothData){
+  res.send({status:false,msg:"please enter valid emailid or password "})
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const loginUser = async function (req, res) {
+//   let userName = req.body.emailId;
+//   let password = req.body.password;
+
+//   let user = await userModel.findOne({ emailId: userName, password: password });
+//   if (!user)
+//     return res.send({
+//       status: false,
+//       msg: "username or the password is not corerct",
+//     });
 
   // Once the login is successful, create the jwt token with sign function
   // Sign function has 2 inputs:
@@ -41,7 +74,7 @@ const loginUser = async function (req, res) {
   );
   res.setHeader("x-auth-token", token);
   res.send({ status: true, token: token });
-};
+
 
 const getUserData = async function (req, res) {
   let token = req.headers["x-Auth-token"];
