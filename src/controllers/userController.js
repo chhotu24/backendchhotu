@@ -99,12 +99,12 @@ const deleteUser = async function (req, res) {
    }
   //  let find1 = await userModel.findOne({ _id: userId})
   //  console.log(find1);
-  let  deleteUser = await userModel.findOneAndUpdate({  _id: userId },{$set:{isDeleted:true}},{new:true});
+  let  deleteUser = await userModel.findOneAndUpdate({  _id: userId },{$set:{isDeleted:false}},{new:true});
   res.send({status:true,msz:deleteUser})
   
 }
 
-// Q 6 - 
+
 
  
 module.exports.createUser = createUser;
